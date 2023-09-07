@@ -7,22 +7,23 @@ class FirstBox extends StatelessWidget {
   Widget build(BuildContext context) {
     var _ksize = MediaQuery.of(context).size;
     return Container(
-      height: _ksize.height * 0.300
-      ,
-      width: _ksize.width,
+      width: _ksize.width*0.500,
+      height: _ksize.height*0.500,
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage('assets/images/mask_group_17.png'),
         ),
       ),
-      child: Padding(
-        padding: EdgeInsets.only(left: _ksize.width*0.08,right: _ksize.width*0.08),
-        child: Row(
+      child: const Row(
+        children: [
+          //ProgressBar(),
+         //SizedBox(width: _ksize.width*0.01),
+         Column(
           children: [
-            ProgressBar(),
-           //SizedBox(width: _ksize.width*,)
+            //Text('Total internal Storage is 128Gb'),
           ],
-        ),
+         )
+        ],
       ),
     );
   }

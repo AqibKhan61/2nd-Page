@@ -36,9 +36,6 @@ class HomeScreen extends StatelessWidget {
                     fontStyle: FontStyle.normal,
                     fontSize: 12.0),
               ),
-              SizedBox(
-                height: _ksize.height * 0.001,
-              ),
               Row(
                 children: [
                   const Text(
@@ -54,7 +51,7 @@ class HomeScreen extends StatelessWidget {
                   Image.asset('assets/images/group_1328.png'),
                 ],
               ),
-              SizedBox(height: _ksize.height*0.01,),
+              SizedBox(height: _ksize.height*0.02,),
               const FirstBox(),
             ],
           ),
