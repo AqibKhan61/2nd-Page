@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
     Lists('assets/images/group_1320.png', 'Send to Techno Camon-15',
         '12 Files Transfered', '10 days ago'),
     Lists('assets/images/group_1244.png', 'Received From Techno Camon-15',
-        '12 Files Transfered', '10 Aug,2023'),    
+        '12 Files Transfered', '10 Aug,2023'),
   ];
   @override
   Widget build(BuildContext context) {
@@ -38,35 +38,41 @@ class HomeScreen extends StatelessWidget {
             left: _ksize.width * 0.04,
             right: _ksize.width * 0.04,
           ),
-        
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Welcome to',
-                style: TextStyle(
-                    color: Color(0xff797979),
-                    fontWeight: FontWeight.w400,
-                    fontFamily: "Outfit",
-                    fontStyle: FontStyle.normal,
-                    fontSize: 12.0),
-              ),
               Row(
                 children: [
-                  const Text(
-                    'Media Transfer App',
-                    style: TextStyle(
-                        color: Color(0xff212121),
-                        fontWeight: FontWeight.w600,
-                        fontFamily: "Outfit",
-                        fontStyle: FontStyle.normal,
-                        fontSize: 17.0),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Welcome to',
+                        style: TextStyle(
+                            color: Color(0xff797979),
+                            fontWeight: FontWeight.w400,
+                            fontFamily: "Outfit",
+                            fontStyle: FontStyle.normal,
+                            fontSize: 12.0),
+                      ),
+                      SizedBox(
+                        height: _ksize.height * 0.01,
+                      ),
+                      const Text(
+                        'Media Transfer App',
+                        style: TextStyle(
+                            color: Color(0xff212121),
+                            fontWeight: FontWeight.w600,
+                            fontFamily: "Outfit",
+                            fontStyle: FontStyle.normal,
+                            fontSize: 17.0),
+                      ),
+                    ],
                   ),
                   const Spacer(),
-                  Padding(
-                    padding: EdgeInsets.only(bottom: _ksize.height*0.001),
-                    child: Image.asset('assets/images/group_1328.png'),
-                  ),
+                  Container(
+                      padding: EdgeInsets.only(bottom: _ksize.height * 0.01),
+                      child: Image.asset('assets/images/group_1328.png')),
                 ],
               ),
               SizedBox(
@@ -76,9 +82,21 @@ class HomeScreen extends StatelessWidget {
               SizedBox(
                 height: _ksize.height * 0.02,
               ),
-              const TwoBoxes(),
+              const Row(
+                children: [
+                  TwoBoxes(
+                      bgimage: 'assets/images/group_1479.png',
+                      svg: 'assets/images/mask_group_18.svg',
+                      buttonText: 'Send Now'),
+                  Spacer(),
+                  TwoBoxes(
+                      bgimage: 'assets/images/group_1480.png',
+                      svg: 'assets/images/mask_group_19.svg',
+                      buttonText: 'Receive'),
+                ],
+              ),
               SizedBox(
-                height: _ksize.height * 0.03,
+                height: _ksize.height * 0.02,
               ),
               const Text(
                 'Latest Activities',
@@ -89,13 +107,13 @@ class HomeScreen extends StatelessWidget {
                     fontStyle: FontStyle.normal,
                     fontSize: 17.0),
               ),
-              // SizedBox(
-              //   height: _ksize.height * 0.01,
-              // ),
-              Container(
-                height: _ksize.height*0.25,
-                width: double.infinity,
+              SizedBox(
+                height: _ksize.height * 0.01,
+              ),
+              Expanded(
+                
                 child: ListView.builder(
+                  padding: EdgeInsets.all(0),
                     itemCount: items.length,
                     shrinkWrap: true,
                     scrollDirection: Axis.vertical,
