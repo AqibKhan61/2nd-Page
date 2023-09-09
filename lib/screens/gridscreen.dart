@@ -90,7 +90,7 @@ class HomePage extends StatelessWidget {
         borderRadius: BorderRadius.circular(15)
       ),
       child: GridView.builder(
-
+        padding: EdgeInsets.only(left: ksize.width*0.03,right: ksize.width*0.03,top: ksize.height*0.02,bottom: ksize.height*0.02),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 4,
           crossAxisSpacing: 5,
