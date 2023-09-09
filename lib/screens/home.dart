@@ -1,8 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:secondpage/widgets/lists.dart';
+import 'package:secondpage/widgets/twoboxex.dart';
 import 'package:secondpage/widgets/firstBox.dart';
+import 'package:secondpage/widgets/bottombar.dart';
+// ignore_for_file: no_leading_underscores_for_local_identifiers
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
+  List<Lists> items = [
+    Lists('assets/images/group_1320.png', 'Send to Techno Camon-15',
+        '12 Files Transfered', '10 days ago'),
+    Lists('assets/images/group_1244.png', 'Received From Techno Camon-15',
+        '12 Files Transfered', '10 Aug,2023'),
+    Lists('assets/images/group_1320.png', 'Send to Techno Camon-15',
+        '12 Files Transfered', '10 days ago'),
+    Lists('assets/images/group_1244.png', 'Received From Techno Camon-15',
+        '12 Files Transfered', '10 Aug,2023'),    
+  ];
   @override
   Widget build(BuildContext context) {
     var _ksize = MediaQuery.of(context).size;
@@ -24,6 +38,7 @@ class HomeScreen extends StatelessWidget {
             left: _ksize.width * 0.04,
             right: _ksize.width * 0.04,
           ),
+        
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -48,15 +63,64 @@ class HomeScreen extends StatelessWidget {
                         fontSize: 17.0),
                   ),
                   const Spacer(),
-                  Image.asset('assets/images/group_1328.png'),
+                  Padding(
+                    padding: EdgeInsets.only(bottom: _ksize.height*0.001),
+                    child: Image.asset('assets/images/group_1328.png'),
+                  ),
                 ],
               ),
-              SizedBox(height: _ksize.height*0.02,),
+              SizedBox(
+                height: _ksize.height * 0.02,
+              ),
               const FirstBox(),
+              SizedBox(
+                height: _ksize.height * 0.02,
+              ),
+              const TwoBoxes(),
+              SizedBox(
+                height: _ksize.height * 0.03,
+              ),
+              const Text(
+                'Latest Activities',
+                style: TextStyle(
+                    color: Color(0xff212121),
+                    fontWeight: FontWeight.w700,
+                    fontFamily: "Outfit",
+                    fontStyle: FontStyle.normal,
+                    fontSize: 17.0),
+              ),
+              // SizedBox(
+              //   height: _ksize.height * 0.01,
+              // ),
+              Container(
+                height: _ksize.height*0.25,
+                width: double.infinity,
+                child: ListView.builder(
+                    itemCount: items.length,
+                    shrinkWrap: true,
+                    scrollDirection: Axis.vertical,
+                    itemBuilder: (context, index) {
+                      return Listss(
+                          title: items[index].titl,
+                          image: items[index].img,
+                          text: items[index].txt,
+                          time: items[index].tm);
+                    }),
+              )
             ],
           ),
         ),
       ),
+      bottomNavigationBar: const BottomBar(),
     );
   }
+}
+
+class Lists {
+  Lists(this.img, this.titl, this.txt, this.tm);
+
+  final String img;
+  final String titl;
+  final String txt;
+  final String tm;
 }
