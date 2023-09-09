@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:secondpage/screens/gridscreen.dart';
 import  'package:secondpage/widgets/dotContainer.dart';
 import 'package:circle_progress_bar/circle_progress_bar.dart';
 
@@ -23,7 +24,6 @@ class FirstBox extends StatelessWidget {
       child: Padding(
         padding:  EdgeInsets.only(top: _ksize.height*0.06,right: _ksize.width*0.02, left: _ksize.width*0.06),
         child: Row(
-          
           children: [
            Container(
             padding: EdgeInsets.only(bottom: _ksize.height*0.08),
@@ -89,7 +89,9 @@ class FirstBox extends StatelessWidget {
                 ),
                 //ElevatedButton(onPressed: () {}, child: const Text('Clean Now'))
                 GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage(),),);
+              },
               child: Container(
                   height: _ksize.height * 0.05,
                   width: _ksize.width * 0.30,
