@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:secondpage/widgets/list2.dart';
 import 'package:secondpage/widgets/button.dart';
+import 'package:secondpage/screens/bankpage4.dart';
 import 'package:secondpage/widgets/profilrimage.dart';
 
 class BankPage3 extends StatelessWidget {
@@ -102,7 +103,7 @@ class BankPage3 extends StatelessWidget {
           Container(
             height: ksize.height * 0.3,
             child: ListView.builder(
-              padding: EdgeInsets.all(0),
+                padding: const EdgeInsets.all(0),
                 itemCount: itemsss.length,
                 itemBuilder: (context, index) {
                   return List2(
@@ -110,7 +111,24 @@ class BankPage3 extends StatelessWidget {
                       text: itemsss[index].text,
                       time: itemsss[index].money);
                 }),
-          )
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const BankPage4()));
+            },
+            child: Padding(
+              padding:  EdgeInsets.only(left: ksize.width*0.7),
+              child: const Text(
+                'more>>>',
+                style: TextStyle(
+                  color: Colors.blue,
+                  decoration: TextDecoration.underline,
+                  decorationColor: Colors.blue,
+                  
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

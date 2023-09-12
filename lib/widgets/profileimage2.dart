@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 
-class ProfileImage extends StatelessWidget{
-  const ProfileImage({super.key});
+
+class ProfileImage2 extends StatelessWidget{
+  const ProfileImage2({super.key});
   @override
   Widget build(BuildContext context) {
     final ksize = MediaQuery.of(context).size;
@@ -10,14 +11,14 @@ class ProfileImage extends StatelessWidget{
       height: ksize.height*0.15,
       width: ksize.width*0.30,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.black,
         borderRadius: BorderRadius.circular(60),
       ),
       child: Column(
         children: [
           Padding(
             padding: EdgeInsets.only(top: ksize.height*0.02),
-            child: const Icon(Icons.person,size: 90.0),
+            child: const Icon(Icons.person,size: 90.0,color: Colors.white,),
           ),
         ],
       ),
