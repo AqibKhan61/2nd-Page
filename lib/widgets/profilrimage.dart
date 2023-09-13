@@ -17,7 +17,7 @@ class ProfileImage extends StatelessWidget{
         children: [
           Padding(
             padding: EdgeInsets.only(top: ksize.height*0.02),
-            child: const Icon(Icons.person,size: 90.0),
+            child: const Icon(Icons.person,size: 90.0,color:  Color.fromARGB(186, 12, 27, 114),),
           ),
         ],
       ),

@@ -6,19 +6,16 @@ class TextFieldd extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ksize = MediaQuery.of(context).size;
-    return Container(
-      height: ksize.height * 0.07,
-      width: ksize.width * 0.75,
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: const Color(0xff797979),
-          width: 1,
-        ),
-        borderRadius: BorderRadius.circular(5),
-        //color: Colors.black,
-      ),
-      child:  TextFormField(
+    return SizedBox(
+      width: ksize.width*0.72,
+      height: ksize.height*0.07,
+      child: TextFormField(
+        obscureText: true,
         decoration: InputDecoration(
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(5),
+          ),
+          
           hintText: 
             lable,
           hintStyle:const TextStyle(
@@ -29,6 +26,6 @@ class TextFieldd extends StatelessWidget {
           focusNode: FocusNode(),
           
         ),
-      );
+    );
   }
 }

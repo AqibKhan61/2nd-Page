@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:secondpage/widgets/appbar.dart';
 import 'package:secondpage/widgets/button.dart';
 import 'package:secondpage/widgets/dropdowm.dart';
+import 'package:secondpage/screens/bankpage6.dart';
 import 'package:secondpage/widgets/textfield2.dart';
 
 class Bankpage5 extends StatelessWidget {
@@ -9,36 +11,7 @@ class Bankpage5 extends StatelessWidget {
   Widget build(BuildContext context) {
     final ksize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        titleSpacing: 5,
-        backgroundColor: const Color.fromARGB(186, 12, 27, 114),
-        leading: const Icon(
-          Icons.menu,
-          color: Colors.white,
-          size: 25,
-        ),
-        title: const Row(
-          children: [
-            Icon(Icons.arrow_back_ios, size: 25, color: Colors.white),
-            SizedBox(width: 15),
-            Text(
-              'Add Card',
-              style: TextStyle(color: Colors.white, fontSize: 30),
-            ),
-          ],
-        ),
-        centerTitle: true,
-        actions:  [
-          Padding(
-            padding: EdgeInsets.only(right: ksize.width*0.03),
-            child: const Icon(
-              Icons.settings,
-              color: Colors.white,
-              size: 30,
-            ),
-          )
-        ],
-      ),
+      appBar: AppBarr(title: 'Add Card'),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -81,7 +54,11 @@ class Bankpage5 extends StatelessWidget {
             //   ),
             // ),
 
-            Image.asset('assets/images/icash4.png'),
+            InkWell(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const BankPage6()));
+              },
+              child: Image.asset('assets/images/icash4.png')),
             SizedBox(
               height: ksize.height * 0.03,
             ),

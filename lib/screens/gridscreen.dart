@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:secondpage/widgets/picture.dart';
 import 'package:secondpage/screens/bankpage.dart';
 import 'package:secondpage/widgets/checkbox.dart';
-import 'package:secondpage/widgets/container.dart';
+
 
 
 

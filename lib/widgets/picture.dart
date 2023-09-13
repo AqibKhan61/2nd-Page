@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class PictureContainer extends StatelessWidget {
-  PictureContainer({super.key, required this.imege});
+  const PictureContainer({super.key, required this.imege});
   final String imege;
   
   @override

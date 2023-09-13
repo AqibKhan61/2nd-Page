@@ -14,28 +14,19 @@ class TextField2 extends StatelessWidget {
         // SizedBox(
         //   height: ksize.height * 0.01,
         // ),
-        Container(
-          height: ksize.height * 0.05,
-          width: ksize.width * 0.75,
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: const Color(0xff797979),
-              width: 1,
+        SizedBox(
+          height: ksize.height*0.05,
+          width: ksize.width*0.65,
+          child: TextFormField(
+            decoration: InputDecoration(
+              hintText: text,
+              hintStyle: const TextStyle(fontSize: 14),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(5),
+              )
+              
             ),
-            borderRadius: BorderRadius.circular(5),
-            //color: Colors.black,
-          ),
-          child: Padding(
-            padding: EdgeInsets.only(left: ksize.width*0.02),
-            child: TextFormField(
-              decoration: InputDecoration(
-                hintText: text,
-                hintStyle: const TextStyle(fontSize: 14),
-                enabledBorder: InputBorder.none,
-                
-              ),
-              textAlign: TextAlign.start,
-            ),
+            textAlign: TextAlign.start,
           ),
         ),
       ],
