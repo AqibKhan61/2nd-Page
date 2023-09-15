@@ -15,19 +15,28 @@ class BankPage6 extends StatelessWidget {
           Container(
             height: ksize.height * 0.50,
             width: double.infinity,
-            color: const Color.fromARGB(186, 12, 27, 114),
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                  Color.fromARGB(186, 12, 27, 114),
+                  Color.fromARGB(184, 43, 60, 156),
+                ])),
             child: Padding(
-              padding: EdgeInsets.only(top: ksize.height*0.03),
+              padding: EdgeInsets.only(top: ksize.height * 0.03),
               child: Column(
                 children: [
-                 const Text(
+                  const Text(
                     'Scan This QR Code',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,
                     ),
                   ),
-                  SizedBox(height: ksize.height*0.02,),
+                  SizedBox(
+                    height: ksize.height * 0.02,
+                  ),
                   Image.asset('assets/images/qrcode.png'),
                   SizedBox(
                     height: ksize.height * 0.03,
@@ -42,39 +51,69 @@ class BankPage6 extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 12,
-                      )
-                  )
+                      ))
                 ],
               ),
             ),
           ),
-          SizedBox(height: ksize.height*0.05,),
-          const Text('Try Barcode',
-          style: TextStyle(
-            fontSize: 18, 
-          ),
-          ),
-          SizedBox(height: ksize.height*0.01,),
           SizedBox(
-            height: 90,
-            width: 400,
-            child: Image.asset('assets/images/barcode.png')),
-          SizedBox(height: ksize.height*0.05,),
-          const Text('Cant Scan the QR code?',style: TextStyle(fontSize: 15),),
+            height: ksize.height * 0.05,
+          ),
+          const Text(
+            'Try Barcode',
+            style: TextStyle(
+              fontSize: 18,
+              color: Color(0xff797979),
+            ),
+          ),
+          SizedBox(
+            height: ksize.height * 0.01,
+          ),
+          SizedBox(
+              height: 90,
+              width: 400,
+              child: Image.asset('assets/images/barcode.png')),
+          SizedBox(
+            height: ksize.height * 0.05,
+          ),
+          const Text(
+            'Cant Scan the QR code?',
+            style: TextStyle(fontSize: 15),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text('Try',style: TextStyle(fontSize: 15),),
-              SizedBox(width: ksize.width*0.01,),
+              const Text(
+                'Try',
+                style: TextStyle(fontSize: 15),
+              ),
+              SizedBox(
+                width: ksize.width * 0.01,
+              ),
               InkWell(
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: ((context) => const BankPage7())));
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: ((context) => const BankPage7())));
                 },
-                child: const Text('Bank Account',style: TextStyle(
-                  decoration: TextDecoration.underline,
-                  color: Colors.blue,
-                  fontSize: 15,
-                ),),
+                child: Padding(
+                  padding:  EdgeInsets.only(top: ksize.height*0.01),
+                  child: const  Text(
+                    'Bank Account',
+                    style: TextStyle(
+                      shadows: [
+                        Shadow(
+                          color: Colors.blue,
+                          offset: Offset(0, -5),
+                        )
+                      ],
+                      color: Colors.transparent,
+                      decoration: TextDecoration.underline,
+                      decorationColor: Colors.blue,
+                      decorationThickness: 1,
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
               )
             ],
           )

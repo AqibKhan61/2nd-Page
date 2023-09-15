@@ -12,6 +12,7 @@ class AppBarr extends StatelessWidget implements PreferredSizeWidget{
   Widget build(BuildContext context) {
     final ksize = MediaQuery.of(context).size;
     return AppBar(
+      elevation: 0.0,
         titleSpacing: 5,
         backgroundColor: const Color.fromARGB(186, 12, 27, 114),
         leading: const Icon(
@@ -22,7 +23,7 @@ class AppBarr extends StatelessWidget implements PreferredSizeWidget{
         title: Row(
           children: [
            const Icon(Icons.arrow_back_ios, size: 25, color: Colors.white),
-            const SizedBox(width: 16),
+             SizedBox(width: ksize.width*0.11),
             Text(
               title,
               style:const TextStyle(color: Colors.white, fontSize: 25),

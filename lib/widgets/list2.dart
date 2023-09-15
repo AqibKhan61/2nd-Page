@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 
 class List2 extends StatelessWidget {
   const List2(
-      {super.key, required this.title, required this.text, required this.time});
+      {super.key, required this.title, required this.text, required this.time,required this.color});
 
   final String title;
   final String text;
   final String time;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class List2 extends StatelessWidget {
       height: _ksize.height * 0.10,
       width: double.infinity,
       decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(20)),
+      borderRadius: BorderRadius.circular(20)),
       margin: EdgeInsets.only(bottom: _ksize.height * 0.01),
       child: Padding(
         padding: EdgeInsets.only(
@@ -30,7 +31,7 @@ class List2 extends StatelessWidget {
               
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(18),
-              color: Colors.blue
+              color: color,
               ),
             ),
             SizedBox(width: _ksize.width * 0.03),
@@ -49,9 +50,7 @@ class List2 extends StatelessWidget {
                             fontStyle: FontStyle.normal,
                             fontSize: 15.0),
                       ),
-                      SizedBox(
-                        width: _ksize.width * 0.12,
-                      ),
+                      SizedBox(width: _ksize.width*0.09,),
                       Text(time,
                           style: const TextStyle(
                               color: Color(0xff797979),

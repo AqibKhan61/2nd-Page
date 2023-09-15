@@ -8,12 +8,12 @@ class BankPage3 extends StatelessWidget {
   BankPage3({super.key});
 
   List<Itemlist> itemsss = [
-    Itemlist('Lorem Epsom Company', 'Received Payment', '\$2,030.80'),
-    Itemlist('Lorem Epsom Company', 'Received Payment', '\$2,030.80'),
-    Itemlist('Lorem Epsom Company', 'Received Payment', '\$2,030.80'),
-    Itemlist('Lorem Epsom Company', 'Received Payment', '\$2,030.80'),
-    Itemlist('Lorem Epsom Company', 'Received Payment', '\$2,030.80'),
-    Itemlist('Lorem Epsom Company', 'Received Payment', '\$2,030.80'),
+    Itemlist('Lorem Epsom Company', 'Received Payment', '\$2,030.80',const Color.fromARGB(186, 12, 27, 114),),
+    Itemlist('Lorem Epsom Company', 'Received Payment', '\$2,030.80',const Color.fromARGB(186, 12, 27, 114),),
+    Itemlist('Lorem Epsom Company', 'Received Payment', '\$2,030.80',const Color.fromARGB(186, 12, 27, 114),),
+    Itemlist('Lorem Epsom Company', 'Received Payment', '\$2,030.80',const Color.fromARGB(186, 12, 27, 114),),
+    Itemlist('Lorem Epsom Company', 'Received Payment', '\$2,030.80',const Color.fromARGB(186, 12, 27, 114),),
+    Itemlist('Lorem Epsom Company', 'Received Payment', '\$2,030.80',const Color.fromARGB(186, 12, 27, 114),),
   ];
 
   @override
@@ -25,7 +25,14 @@ class BankPage3 extends StatelessWidget {
           Container(
             height: ksize.height * 0.55,
             width: double.infinity,
-            color: const Color.fromARGB(186, 12, 27, 114),
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                  Color.fromARGB(186, 12, 27, 114),
+                  Color.fromARGB(184, 43, 60, 156),
+                ])),
             child: Padding(
               padding: EdgeInsets.only(
                   top: ksize.height * 0.06,
@@ -71,7 +78,8 @@ class BankPage3 extends StatelessWidget {
                         children: [
                           Text(
                             'BALANCE',
-                            style: TextStyle(color: Colors.blue),
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 21, 117, 196)),
                           ),
                           Text(
                             '\$4,180.20',
@@ -81,7 +89,7 @@ class BankPage3 extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          Buttonn(text: 'Transfer'),
+                          Buttonn(text: 'Transfer',color:  Color.fromARGB(186, 12, 27, 114),textcolor: Colors.white),
                         ],
                       ),
                     ),
@@ -95,7 +103,7 @@ class BankPage3 extends StatelessWidget {
           ),
           const Text(
             'LATEST TRANSACTIONS',
-            style: TextStyle(color: Colors.blue),
+            style: TextStyle(color: Color.fromARGB(255, 21, 117, 196)),
           ),
           SizedBox(
             height: ksize.height * 0.02,
@@ -109,22 +117,24 @@ class BankPage3 extends StatelessWidget {
                   return List2(
                       title: itemsss[index].title,
                       text: itemsss[index].text,
-                      time: itemsss[index].money);
+                      time: itemsss[index].money,
+                      color: itemsss[index].color,
+                      );
                 }),
           ),
           InkWell(
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const BankPage4()));
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const BankPage4()));
             },
             child: Padding(
-              padding:  EdgeInsets.only(left: ksize.width*0.7),
+              padding: EdgeInsets.only(left: ksize.width * 0.7),
               child: const Text(
                 'more>>>',
                 style: TextStyle(
                   color: Colors.blue,
                   decoration: TextDecoration.underline,
                   decorationColor: Colors.blue,
-                  
                 ),
               ),
             ),
@@ -136,9 +146,10 @@ class BankPage3 extends StatelessWidget {
 }
 
 class Itemlist {
-  Itemlist(this.title, this.text, this.money);
+  Itemlist(this.title, this.text, this.money,this.color);
 
   final String title;
   final String text;
   final String money;
+  final  Color color;
 }

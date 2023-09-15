@@ -14,7 +14,15 @@ class BankPage extends StatelessWidget {
             Container(
               height: ksize.height * 0.55,
               width: double.infinity,
-              color: const Color.fromARGB(186, 12, 27, 114),
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                  Color.fromARGB(186, 12, 27, 114),
+                  Color.fromARGB(184, 43, 60, 156),
+                ])
+              ),
               child: Padding(
                 padding: EdgeInsets.only(top: ksize.height * 0.08),
                 child: Column(
@@ -33,11 +41,11 @@ class BankPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: ksize.height*0.06,),
-            const TextFieldd(lable: 'Username or email'),
+            const TextFieldd(lable: 'Username or email',obscure: false),
             SizedBox(height: ksize.height*0.03,),
-            const TextFieldd(lable: 'Password'),
+            const TextFieldd(lable: 'Password',obscure: true),
             SizedBox(height: ksize.height*0.03,),
-            const Buttonn(text: 'Login'),
+            const Buttonn(text: 'Login',color: Color.fromARGB(186, 12, 27, 114),textcolor: Colors.white),
             SizedBox(height: ksize.height*0.03,),
             GestureDetector(
               onTap: (){
