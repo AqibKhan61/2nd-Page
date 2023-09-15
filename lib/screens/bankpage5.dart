@@ -12,15 +12,12 @@ class Bankpage5 extends StatelessWidget {
   Widget build(BuildContext context) {
     final ksize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBarr(title: 'Add Card'),
+      appBar: AppBarr(title: 'Add Card',ontap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context) => const BankPage6()));
+}),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            InkWell(
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const BankPage6()));
-              },
-              child: Image.asset('assets/images/icash4.png')),
+            Image.asset('assets/images/icash4.png'),
             SizedBox(
               height: ksize.height * 0.03,
             ),
@@ -34,18 +31,18 @@ class Bankpage5 extends StatelessWidget {
               height: ksize.height * 0.01,
             ),
             Padding(
-              padding: EdgeInsets.only(right: ksize.width * 0.40),
+              padding: EdgeInsets.only(right: ksize.width * 0.45),
               child: const Text(
                 'Expired Date',
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: ksize.width * 0.18),
+              padding: EdgeInsets.only(left: ksize.width * 0.16),
               child: Row(
                 children: [
                   const DropDown(),
                   SizedBox(
-                    width: ksize.width * 0.01,
+                    width: ksize.width * 0.05,
                   ),
                   const DropDown(),
                 ],
@@ -61,35 +58,12 @@ class Bankpage5 extends StatelessWidget {
             Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(right: ksize.width*0.37),
+                  padding: EdgeInsets.only(right: ksize.width*0.40),
                   child: const Text('Phone Number'),
                 ),
-                // Padding(
-                //   padding:  EdgeInsets.only(left: ksize.width*0.18),
-                //   child: Row(
-                //     children: [
-                //       const DropDown(),
-                //       SizedBox(
-                //         width: ksize.width * 0.02,
-                //       ),
-                //       Container(
-                //         height: ksize.height * 0.05,
-                //         width: ksize.width * 0.32,
-                //         decoration: BoxDecoration(
-                //           border: Border.all(
-                //             color: const Color(0xff797979),
-                //             width: 1,
-                //           ),
-                //           borderRadius: BorderRadius.circular(5),
-                //           //color: Colors.black,
-                //         ),
-                //       )
-                //     ],
-                //   ),
-                // ),
                 SizedBox(
                   height: ksize.height*0.13,
-                  width: ksize.width*0.65,
+                  width: ksize.width*0.68,
                   child: IntlPhoneField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(

@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 class AppBarr extends StatelessWidget implements PreferredSizeWidget{
    
  
- AppBarr({super.key, required this.title});
+ const AppBarr({super.key, required this.title, required this.ontap});
 
   final String title;
+  final Function() ontap;
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +25,12 @@ class AppBarr extends StatelessWidget implements PreferredSizeWidget{
           children: [
            const Icon(Icons.arrow_back_ios, size: 25, color: Colors.white),
              SizedBox(width: ksize.width*0.11),
-            Text(
-              title,
-              style:const TextStyle(color: Colors.white, fontSize: 25),
+            InkWell(
+              onTap: ontap,
+              child: Text(
+                title,
+                style:const TextStyle(color: Colors.white, fontSize: 25),
+              ),
             ),
           ],
         ),

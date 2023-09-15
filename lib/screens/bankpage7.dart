@@ -11,7 +11,12 @@ class BankPage7 extends StatelessWidget {
   Widget build(BuildContext context) {
     final ksize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBarr(title: 'Transaction'),
+      appBar: AppBarr(
+          title: 'Transaction',
+          ontap: () {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => BankPage8()));
+          }),
       body: Padding(
         padding: EdgeInsets.only(left: ksize.width * 0.15),
         child: SingleChildScrollView(
@@ -52,7 +57,7 @@ class BankPage7 extends StatelessWidget {
             ),
             const Text('   Message'),
             SizedBox(
-              width: ksize.width * 0.66,
+              width: ksize.width * 0.68,
               child: TextFormField(
                 maxLines: 3,
                 decoration: InputDecoration(
@@ -77,12 +82,7 @@ class BankPage7 extends StatelessWidget {
                 SizedBox(
                   width: ksize.width * 0.02,
                 ),
-                InkWell(
-                    onTap: () {
-                      Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => BankPage8()));
-                    },
-                    child: const Text('Or')),
+                InkWell(onTap: () {}, child: const Text('Or')),
                 SizedBox(
                   width: ksize.width * 0.02,
                 ),

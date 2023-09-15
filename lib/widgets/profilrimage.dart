@@ -7,8 +7,8 @@ class ProfileImage extends StatelessWidget{
   Widget build(BuildContext context) {
     final ksize = MediaQuery.of(context).size;
     return Container(
-      height: ksize.height*0.12,
-      width: ksize.width*0.24,
+      height: 90,
+      width: 90,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(60),

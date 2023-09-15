@@ -9,7 +9,7 @@ class BankPage6 extends StatelessWidget {
   Widget build(BuildContext context) {
     final ksize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBarr(title: 'Transaction'),
+      appBar: AppBarr(title: 'Transaction',ontap: (){}),
       body: Column(
         children: [
           Container(

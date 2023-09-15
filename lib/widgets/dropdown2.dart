@@ -18,7 +18,7 @@ class _DropDown2State extends State<DropDown2>{
 
     return Container(
        height: ksize.height*0.05,
-       width: ksize.width*0.65,
+       width: ksize.width*0.68  ,
        decoration: BoxDecoration(
         border: Border.all(color: const Color(0xff797979)),
         borderRadius: BorderRadius.circular(5),

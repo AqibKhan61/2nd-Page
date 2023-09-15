@@ -12,7 +12,7 @@ class BankPage extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: ksize.height * 0.55,
+              height: ksize.height * 0.51,
               width: double.infinity,
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
@@ -34,8 +34,10 @@ class BankPage extends StatelessWidget {
                         fontSize: 28,
                       ),
                     ),
-                    SizedBox(height: ksize.height*0.04,),
-                    Image.asset('assets/images/home.png',color: Colors.white),
+                    SizedBox(height: ksize.height*0.03,),
+                    SizedBox(
+                      height: ksize.height*0.30,
+                      child: Image.asset('assets/images/home.png',color: Colors.white,)),
                   ],
                 ),
               ),

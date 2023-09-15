@@ -17,7 +17,7 @@ class TextField2 extends StatelessWidget {
         // ),
         SizedBox(
           height: ksize.height*0.05,
-          width: ksize.width*0.65,
+          width: ksize.width*0.68,
           child: TextFormField(
             obscureText: obscure,
             decoration: InputDecoration(

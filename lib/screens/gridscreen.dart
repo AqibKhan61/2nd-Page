@@ -68,17 +68,6 @@ class HomePage extends StatelessWidget {
                   ),
                   const Spacer(),
                   const CheckboxWidget(),
-                  // Container(
-                  //   height: ksize.height * 0.02,
-                  //   width: ksize.width * 0.03,
-                  //   decoration: BoxDecoration(
-                  //     color: Colors.white,
-                  //     border: Border.all(color: Colors.black),
-                  //   ),
-                  // ),
-                  // SizedBox(
-                  //   width: ksize.width * 0.01,
-                  // ),
                   const Text(
                     'Select All',
                     style: TextStyle(
@@ -86,7 +75,7 @@ class HomePage extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                       fontFamily: "Outfit",
                       fontStyle: FontStyle.normal,
-                      fontSize: 13,
+                      fontSize: 18,
                     ),
                   ),
                 ],

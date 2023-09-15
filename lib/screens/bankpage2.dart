@@ -58,39 +58,43 @@ class BankPage2 extends StatelessWidget {
             SizedBox(
               height: ksize.height * 0.01,
             ),
-            const Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                 Text(
-                  'Use 6 Characters with the mix of Letters,',
+            Padding(
+              padding: EdgeInsets.only(left: ksize.width * 0.15),
+              child: SizedBox(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Use 6 Characters with the mix of Letters,',
+                    ),
+                    const Text(
+                      'numbers and symbols,',
+                    ),
+                    SizedBox(height: ksize.height*0.01,),
+                    Row(
+                      //mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        const CheckboxWidget(),
+                        SizedBox(
+                          width: ksize.width * 0.01,
+                        ),
+                        const Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'By singing up you agree to Banks',
+                            ),
+                            Text('term use And privacy policy'),
+                          ],
+                        )
+                      ],
+                    ),
+                  ],
                 ),
-                 Text(
-              'numbers and symbols,',
+              ),
             ),
-              ],
-            ),
-            
             SizedBox(
               height: ksize.height * 0.01,
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                  left: ksize.width * 0.12, right: ksize.width * 0.10),
-              child: const Row(
-                children: [
-                  CheckboxWidget(),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'By singing up you agree to Banks',
-                        textAlign: TextAlign.center,
-                      ),
-                      Text('term use And privacy policy'),
-                    ],
-                  )
-                ],
-              ),
             ),
             SizedBox(
               height: ksize.height * 0.02,
@@ -98,11 +102,18 @@ class BankPage2 extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Buttonn(text: 'Sign Up',color: Color.fromARGB(186, 12, 27, 114),textcolor: Colors.white),
+                const Buttonn(
+                    text: 'Sign Up',
+                    color: Color.fromARGB(186, 12, 27, 114),
+                    textcolor: Colors.white),
                 SizedBox(width: ksize.width * 0.03),
                 const Text('or'),
                 SizedBox(width: ksize.width * 0.03),
-                const Buttonn(text: 'Cancel',color: Colors.white,textcolor: Colors.black,)
+                const Buttonn(
+                  text: 'Cancel',
+                  color: Colors.white,
+                  textcolor: Colors.black,
+                )
               ],
             ),
             SizedBox(

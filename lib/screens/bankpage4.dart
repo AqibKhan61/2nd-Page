@@ -11,21 +11,16 @@ class BankPage4 extends StatelessWidget {
   Widget build(BuildContext context) {
     final ksize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBarr(title: 'Account'),
+      appBar: AppBarr(title: 'Account',ontap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context) =>const Bankpage5()));}),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.only(top: ksize.height*0.03,left: ksize.width*0.17),
+          padding: EdgeInsets.only(top: ksize.height*0.03,left: ksize.width*0.15),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              InkWell(
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Bankpage5()));
-                },
-                child: Padding(
-                  padding: EdgeInsets.only(left: ksize.width*0.20),
-                  child: const ProfileImage2(),
-                ),
+              Padding(
+                padding: EdgeInsets.only(left: ksize.width*0.20),
+                child: const ProfileImage2(),
               ),
               SizedBox(
                 height: ksize.height * 0.03,
@@ -72,7 +67,7 @@ class BankPage4 extends StatelessWidget {
               ),
               const Text('Your Address',),
               SizedBox(
-                width: ksize.width*0.66,
+                width: ksize.width*0.68,
                 child: TextFormField(
                   maxLines: 3,
                   decoration: InputDecoration(
