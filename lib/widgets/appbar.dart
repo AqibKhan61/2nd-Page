@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:secondpage/utils/app_icon.dart';
+import 'package:secondpage/utils/app_colors.dart';
+import 'package:secondpage/utils/apptextstyle.dart';
 
 
 class AppBarr extends StatelessWidget implements PreferredSizeWidget{
    
  
- const AppBarr({super.key, required this.title, required this.ontap});
+ const AppBarr({super.key, required this.title, required this.ontap ,this.leading,this.actions });
 
   final String title;
   final Function() ontap;
+  final Widget ?leading;
+  final List<Widget>?actions;
 
   @override
   Widget build(BuildContext context) {
@@ -15,36 +20,37 @@ class AppBarr extends StatelessWidget implements PreferredSizeWidget{
     return AppBar(
       elevation: 0.0,
         titleSpacing: 5,
-        backgroundColor: const Color.fromARGB(186, 12, 27, 114),
-        leading: const Icon(
-          Icons.menu,
-          color: Colors.white,
-          size: 25,
-        ),
-        title: Row(
+        backgroundColor: AppColors.primaryColor,
+        leading:leading,
+        //  (
+        //   AppIcon.menu,
+        //   cIconolor: AppColors.white,
+        //   size: 25,
+        // ),
+        title: 
+        Row(
           children: [
-           const Icon(Icons.arrow_back_ios, size: 25, color: Colors.white),
+             Icon(AppIcon.backarrow, size: 25, color: AppColors.white),
              SizedBox(width: ksize.width*0.11),
-            InkWell(
-              onTap: ontap,
-              child: Text(
-                title,
-                style:const TextStyle(color: Colors.white, fontSize: 25),
-              ),
+            Text(
+              title,
+              style: AppTextStyle.appbarTextstyle,
             ),
           ],
         ),
         centerTitle: true,
-        actions:  [
-          Padding(
-            padding: EdgeInsets.only(right: ksize.width*0.03),
-            child: const Icon(
-              Icons.settings,
-              color: Colors.white,
-              size: 30,
-            ),
-          )
-        ],
+        actions: actions,
+        
+        //  [
+        //   Padding(
+        //     padding: EdgeInsets.only(right: ksize.width*0.03),
+        //     child:  Icon(
+        //       AppIcon.setting,
+        //       color: AppColors.white,
+        //       size: 30,
+        //     ),
+        //   )
+        // ],
       
     );
   }

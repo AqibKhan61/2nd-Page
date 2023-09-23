@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:secondpage/widgets/appbar.dart';
+import 'package:secondpage/utils/app_images.dart';
+import 'package:secondpage/utils/app_colors.dart';
 import 'package:secondpage/screens/bankpage7.dart';
+import 'package:secondpage/utils/apptextstyle.dart';
 
 class BankPage6 extends StatelessWidget {
   const BankPage6({super.key});
@@ -20,38 +23,28 @@ class BankPage6 extends StatelessWidget {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                  Color.fromARGB(186, 12, 27, 114),
+                   AppColors.primaryColor,
                   Color.fromARGB(184, 43, 60, 156),
                 ])),
             child: Padding(
               padding: EdgeInsets.only(top: ksize.height * 0.03),
               child: Column(
                 children: [
-                  const Text(
+                   Text(
                     'Scan This QR Code',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                    ),
+                    style: AppTextStyle.textStyleMedium.copyWith(color: AppColors.white,fontSize: 18)
                   ),
                   SizedBox(
                     height: ksize.height * 0.02,
                   ),
-                  Image.asset('assets/images/qrcode.png'),
+                  Image.asset(AppImages.qrcodeImage),
                   SizedBox(
                     height: ksize.height * 0.03,
                   ),
-                  const Text('Your Name',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      )),
-                  const Text('your-email@gmail.com',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                      ))
+                   Text('Your Name',
+                      style: AppTextStyle.textStyletitle.copyWith(color: AppColors.white),),
+                   Text('your-email@gmail.com',
+                      style: AppTextStyle.textStylesmall.copyWith(color: AppColors.white))
                 ],
               ),
             ),
@@ -59,12 +52,9 @@ class BankPage6 extends StatelessWidget {
           SizedBox(
             height: ksize.height * 0.05,
           ),
-          const Text(
+           Text(
             'Try Barcode',
-            style: TextStyle(
-              fontSize: 18,
-              color: Color(0xff797979),
-            ),
+            style: AppTextStyle.textStylesmall.copyWith(fontSize: 18)
           ),
           SizedBox(
             height: ksize.height * 0.01,
@@ -72,20 +62,20 @@ class BankPage6 extends StatelessWidget {
           SizedBox(
               height: 90,
               width: 400,
-              child: Image.asset('assets/images/barcode.png')),
+              child: Image.asset(AppImages.barcodeImage)),
           SizedBox(
             height: ksize.height * 0.05,
           ),
           const Text(
             'Cant Scan the QR code?',
-            style: TextStyle(fontSize: 15),
+            style: AppTextStyle.textStyleMedium,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
                 'Try',
-                style: TextStyle(fontSize: 15),
+                style: AppTextStyle.textStyleMedium,
               ),
               SizedBox(
                 width: ksize.width * 0.01,
@@ -95,24 +85,9 @@ class BankPage6 extends StatelessWidget {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: ((context) => const BankPage7())));
                 },
-                child: Padding(
-                  padding:  EdgeInsets.only(top: ksize.height*0.01),
-                  child: const  Text(
-                    'Bank Account',
-                    style: TextStyle(
-                      shadows: [
-                        Shadow(
-                          color: Colors.blue,
-                          offset: Offset(0, -5),
-                        )
-                      ],
-                      color: Colors.transparent,
-                      decoration: TextDecoration.underline,
-                      decorationColor: Colors.blue,
-                      decorationThickness: 1,
-                      fontSize: 15,
-                    ),
-                  ),
+                child: const  Text(
+                  'Bank Account',
+                  style: AppTextStyle.linkTextstyle,
                 ),
               )
             ],

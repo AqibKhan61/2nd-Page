@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:secondpage/widgets/appbar.dart';
 import 'package:secondpage/widgets/button.dart';
+import 'package:secondpage/utils/app_images.dart';
+import 'package:secondpage/utils/app_colors.dart';
 import 'package:secondpage/screens/bankpage8.dart';
 import 'package:secondpage/widgets/dropdown2.dart';
 import 'package:secondpage/widgets/textfield2.dart';
@@ -28,7 +30,7 @@ class BankPage7 extends StatelessWidget {
                 left: 0,
               ),
               child: Image.asset(
-                'assets/images/transaction.png',
+                AppImages.transactionImage,
               ),
             ),
             SizedBox(
@@ -75,21 +77,25 @@ class BankPage7 extends StatelessWidget {
             ),
             Row(
               children: [
-                const Buttonn(
+                 Buttonn(
+                  ontap: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> BankPage8()));
+                  },
                     text: 'Send',
-                    color: Color.fromARGB(186, 12, 27, 114),
-                    textcolor: Colors.white),
+                    color: AppColors.primaryColor,
+                    textcolor: AppColors.white),
                 SizedBox(
                   width: ksize.width * 0.02,
                 ),
-                InkWell(onTap: () {}, child: const Text('Or')),
+                const Text('Or'),
                 SizedBox(
                   width: ksize.width * 0.02,
                 ),
                 const Buttonn(
-                    text: 'Cancel',
-                    color: Colors.white,
-                    textcolor: Colors.black),
+                  text: 'Cancel',
+                  color: AppColors.white,
+                  textcolor: AppColors.black,
+                ),
               ],
             )
           ]),

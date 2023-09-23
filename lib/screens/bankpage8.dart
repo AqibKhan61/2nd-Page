@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:secondpage/widgets/list2.dart';
 import 'package:secondpage/widgets/appbar.dart';
+import 'package:secondpage/utils/app_colors.dart';
 import 'package:secondpage/screens/bankpage9.dart';
 import 'package:secondpage/widgets/container.dart';
 import 'package:secondpage/widgets/smallcontainer.dart';
@@ -33,7 +34,7 @@ class BankPage8 extends StatelessWidget {
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
-                    Color.fromARGB(186, 12, 27, 114),
+                     AppColors.primaryColor,
                     Color.fromARGB(184, 43, 60, 156),
                   ])),
               child: Padding(
@@ -43,7 +44,7 @@ class BankPage8 extends StatelessWidget {
                   //right: ksize.width * 0.07,
                 ),
                 child: Row(children: [
-                  Containerr(color: Colors.blue, text: 'Complete'),
+                  Containerr(color: AppColors.linkColor, text: 'Complete'),
                   SizedBox(width: ksize.width * 0.05),
                   Containerr(color: Colors.grey, text: 'In Progress'),
                 ]),
@@ -80,7 +81,7 @@ class BankPage8 extends StatelessWidget {
                       color: const Color.fromARGB(255, 209, 203, 203),
                       text: '1'),
                   SizedBox(width: ksize.width * 0.01),
-                  SmallContainer(color: Colors.blue, text: '2'),
+                  SmallContainer(color: AppColors.linkColor, text: '2'),
                   SizedBox(width: ksize.width * 0.01),
                   SmallContainer(
                       color: const Color.fromARGB(255, 209, 203, 203),

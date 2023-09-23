@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:secondpage/widgets/list2.dart';
 import 'package:secondpage/widgets/button.dart';
+import 'package:secondpage/utils/app_colors.dart';
 import 'package:secondpage/screens/bankpage4.dart';
+import 'package:secondpage/utils/apptextstyle.dart';
 import 'package:secondpage/widgets/profilrimage.dart';
 
 class BankPage3 extends StatelessWidget {
@@ -30,7 +32,7 @@ class BankPage3 extends StatelessWidget {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                  Color.fromARGB(186, 12, 27, 114),
+                  AppColors.primaryColor,
                   Color.fromARGB(184, 43, 60, 156),
                 ])),
             child: Padding(
@@ -43,25 +45,22 @@ class BankPage3 extends StatelessWidget {
                   const Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Icon(Icons.menu, color: Colors.white),
+                      Icon(Icons.menu, color: AppColors.white),
                       Spacer(),
-                      Icon(Icons.settings, color: Colors.white),
+                      Icon(Icons.settings, color: AppColors.white),
                     ],
                   ),
                   const ProfileImage(),
                   SizedBox(
                     height: ksize.height * 0.02,
                   ),
-                  const Text(
+                   Text(
                     'YOUR NAME',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                    ),
+                    style: AppTextStyle.textStyletitle.copyWith(color: AppColors.white)
                   ),
-                  const Text(
+                   Text(
                     'your-email@gmail.com',
-                    style: TextStyle(color: Colors.white),
+                    style: AppTextStyle.textStylesmall.copyWith(color: AppColors.white)
                   ),
                   SizedBox(
                     height: ksize.height * 0.02,
@@ -70,26 +69,22 @@ class BankPage3 extends StatelessWidget {
                     height: ksize.height * 0.16,
                     width: ksize.width * 0.70,
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: AppColors.white,
                         borderRadius: BorderRadius.circular(15)),
                     child: Padding(
                       padding: EdgeInsets.only(top: ksize.height * 0.01),
-                      child: const Column(
+                      child:  Column(
                         children: [
-                          Text(
+                          const Text(
                             'BALANCE',
                             style: TextStyle(
                                 color: Color.fromARGB(255, 21, 117, 196)),
                           ),
                           Text(
                             '\$4,180.20',
-                            style: TextStyle(
-                              color: Color.fromARGB(186, 12, 27, 114),
-                              fontSize: 28,
-                              fontWeight: FontWeight.bold,
-                            ),
+                            style: AppTextStyle.textStyletitle.copyWith(fontSize: 28)
                           ),
-                          Buttonn(text: 'Transfer',color:  Color.fromARGB(186, 12, 27, 114),textcolor: Colors.white),
+                          const Buttonn(text: 'Transfer',color:  AppColors.primaryColor,textcolor: Colors.white),
                         ],
                       ),
                     ),
@@ -131,11 +126,7 @@ class BankPage3 extends StatelessWidget {
               padding: EdgeInsets.only(left: ksize.width * 0.7),
               child: const Text(
                 'more>>>',
-                style: TextStyle(
-                  color: Colors.blue,
-                  decoration: TextDecoration.underline,
-                  decorationColor: Colors.blue,
-                ),
+                style: AppTextStyle.linkTextstyle,
               ),
             ),
           ),

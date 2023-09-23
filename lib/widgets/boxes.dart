@@ -1,5 +1,7 @@
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
+import 'package:secondpage/utils/app_colors.dart';
+import 'package:secondpage/utils/apptextstyle.dart';
 
 
 class Box extends StatelessWidget {
@@ -20,24 +22,19 @@ class Box extends StatelessWidget {
               right: _ksize.width * 0.02),
           // margin: EdgeInsets.only(bottom: _ksize.height*0.01),
           decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(color: const Color(0xff797979)),
+              color: AppColors.white,
+              border: Border.all(color: AppColors.Textfieldhint),
               borderRadius: BorderRadius.circular(30)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-             SvgPicture.asset(image,fit: BoxFit.scaleDown, color: Colors.black,),
+             SvgPicture.asset(image,fit: BoxFit.scaleDown, color: AppColors.black,),
               SizedBox(
                 width: _ksize.width * 0.01,
               ),
               Text(
                 text,
-                style: const TextStyle(
-                    color: Color(0xff797979),
-                    fontWeight: FontWeight.w400,
-                    fontFamily: "Outfit",
-                    fontStyle: FontStyle.normal,
-                    fontSize: 16.0),
+                style: AppTextStyle.textStylesmall
               ),
             ],
           ),

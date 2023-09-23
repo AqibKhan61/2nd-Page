@@ -30,13 +30,13 @@ class TwoBoxes extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           SizedBox(
-            height: _ksize.height * 0.01,
+            height: _ksize.height * 0.02,
           ),
           GestureDetector(
               onTap: () {},
               child: Container(
                   height: _ksize.height * 0.05,
-                  width: _ksize.width * 0.30,
+                  width: _ksize.width * 0.33,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(12),

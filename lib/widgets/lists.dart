@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:secondpage/utils/apptextstyle.dart';
 // ignore_for_file: no_leading_underscores_for_local_identifiers
 
 
@@ -18,9 +19,16 @@ class Listss extends StatelessWidget {
   Widget build(BuildContext context) {
     var _ksize = MediaQuery.of(context).size;
     return Container(
-      height: _ksize.height * 0.10,
+      height: _ksize.height * 0.09,
       width: double.infinity,
       decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Color.fromARGB(255, 200, 224, 250).withOpacity(0.2),
+            spreadRadius: 5,
+            blurRadius: 10,
+          )
+        ],
           color: Colors.white, borderRadius: BorderRadius.circular(20)),
       margin: EdgeInsets.only(bottom: _ksize.height * 0.01),
       child: Padding(
@@ -35,32 +43,18 @@ class Listss extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: const TextStyle(
-                      color: Color(0xff212121),
-                      fontWeight: FontWeight.w400,
-                      fontFamily: "Outfit",
-                      fontStyle: FontStyle.normal,
-                      fontSize: 15.0),
+                  style: AppTextStyle.textStyleMedium,
                 ),
+                SizedBox(height: _ksize.height*0.01,),
                 Row(
                   children: [
                     Text(text,
-                        style: const TextStyle(
-                            color: Color(0xff797979),
-                            fontWeight: FontWeight.w300,
-                            fontFamily: "Outfit",
-                            fontStyle: FontStyle.normal,
-                            fontSize: 12.0)),
+                        style: AppTextStyle.textStylesmall,),
                     SizedBox(
-                      width: _ksize.width * 0.21,
+                      width: _ksize.width * 0.18,
                     ),
                     Text(time,
-                        style: const TextStyle(
-                            color: Color(0xff797979),
-                            fontWeight: FontWeight.w300,
-                            fontFamily: "Outfit",
-                            fontStyle: FontStyle.normal,
-                            fontSize: 12.0)),
+                        style: AppTextStyle.textStylesmall,),
                   ],
                 )
               ],

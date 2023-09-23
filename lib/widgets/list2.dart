@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:secondpage/utils/apptextstyle.dart';
 
 class List2 extends StatelessWidget {
   const List2(
@@ -43,30 +44,15 @@ class List2 extends StatelessWidget {
                     children: [
                       Text(
                         title,
-                        style: const TextStyle(
-                            color: Color(0xff212121),
-                            fontWeight: FontWeight.w400,
-                            fontFamily: "Outfit",
-                            fontStyle: FontStyle.normal,
-                            fontSize: 15.0),
+                        style: AppTextStyle.textStyleMedium,
                       ),
                       SizedBox(width: _ksize.width*0.09,),
                       Text(time,
-                          style: const TextStyle(
-                              color: Color(0xff797979),
-                              fontWeight: FontWeight.w300,
-                              fontFamily: "Outfit",
-                              fontStyle: FontStyle.normal,
-                              fontSize: 12.0)),
+                          style: AppTextStyle.textStylesmall),
                     ],
                   ),
                   Text(text,
-                      style: const TextStyle(
-                          color: Color(0xff797979),
-                          fontWeight: FontWeight.w300,
-                          fontFamily: "Outfit",
-                          fontStyle: FontStyle.normal,
-                          fontSize: 12.0))
+                      style: AppTextStyle.textStylesmall)
                 ]),
           ],
         ),

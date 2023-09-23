@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:secondpage/utils/apptextstyle.dart';
 
 class LastContainer extends StatelessWidget {
   LastContainer({super.key, required this.color, required this.icon, required this.txt});
@@ -31,7 +32,7 @@ class LastContainer extends StatelessWidget {
           ),
         ),
         SizedBox(height: ksize.height*0.01,),
-        Text(txt),
+        Text(txt,style: AppTextStyle.textStyleMedium,),
       ],
     );
   }

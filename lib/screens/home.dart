@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:secondpage/widgets/lists.dart';
+import 'package:secondpage/utils/app_colors.dart';
+import 'package:secondpage/utils/app_images.dart';
 import 'package:secondpage/widgets/twoboxex.dart';
 import 'package:secondpage/widgets/firstBox.dart';
 import 'package:secondpage/widgets/bottombar.dart';
+import 'package:secondpage/utils/apptextstyle.dart';
 // ignore_for_file: no_leading_underscores_for_local_identifiers
 
 class HomeScreen extends StatelessWidget {
@@ -24,10 +27,10 @@ class HomeScreen extends StatelessWidget {
       body: Container(
         height: _ksize.height,
         width: _ksize.width,
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
-              'assets/images/mask_group_12.png',
+              AppImages.backgroungImage,
             ),
             fit: BoxFit.cover,
           ),
@@ -46,33 +49,27 @@ class HomeScreen extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
+                      Text(
                         'Welcome to',
-                        style: TextStyle(
-                            color: Color(0xff797979),
-                            fontWeight: FontWeight.w400,
-                            fontFamily: "Outfit",
-                            fontStyle: FontStyle.normal,
-                            fontSize: 12.0),
+                        style: AppTextStyle.textStyletitle.copyWith(
+                            color: Color.fromARGB(255, 105, 151, 141),
+                            fontWeight: FontWeight.w300,
+                            fontSize: 15,
+                            ),
                       ),
-                      SizedBox(
-                        height: _ksize.height * 0.01,
-                      ),
-                      const Text(
+                      // SizedBox(
+                      //   height: _ksize.height * 0.01,
+                      // ),
+                       Text(
                         'Media Transfer App',
-                        style: TextStyle(
-                            color: Color(0xff212121),
-                            fontWeight: FontWeight.w600,
-                            fontFamily: "Outfit",
-                            fontStyle: FontStyle.normal,
-                            fontSize: 17.0),
-                      ),
+                        style: AppTextStyle.textStyletitle.copyWith(fontSize: 20,color: Colors.black),
+                      )
                     ],
                   ),
                   const Spacer(),
                   Container(
-                      padding: EdgeInsets.only(bottom: _ksize.height * 0.01),
-                      child: Image.asset('assets/images/group_1328.png')),
+                      // padding: EdgeInsets.only(bottom: _ksize.height * 0.01),
+                      child: Image.asset(AppImages.IconImage)),
                 ],
               ),
               SizedBox(
@@ -80,40 +77,34 @@ class HomeScreen extends StatelessWidget {
               ),
               const FirstBox(),
               SizedBox(
-                height: _ksize.height * 0.02,
+                height: _ksize.height * 0.03,
               ),
-              const Row(
+              Row(
                 children: [
                   TwoBoxes(
-                      bgimage: 'assets/images/group_1479.png',
-                      svg: 'assets/images/mask_group_18.svg',
+                      bgimage: AppImages.fstboxbgImage,
+                      svg: AppImages.fstboxiconImage,
                       buttonText: 'Send Now'),
-                  Spacer(),
+                  const Spacer(),
                   TwoBoxes(
-                      bgimage: 'assets/images/group_1480.png',
-                      svg: 'assets/images/mask_group_19.svg',
+                      bgimage: AppImages.scndboxbgImage,
+                      svg: AppImages.scndboxiconImage,
                       buttonText: 'Receive'),
                 ],
               ),
               SizedBox(
-                height: _ksize.height * 0.02,
+                height: _ksize.height * 0.03,
               ),
-              const Text(
+               Text(
                 'Latest Activities',
-                style: TextStyle(
-                    color: Color(0xff212121),
-                    fontWeight: FontWeight.w700,
-                    fontFamily: "Outfit",
-                    fontStyle: FontStyle.normal,
-                    fontSize: 17.0),
+                style: AppTextStyle.textStyletitle.copyWith(color: Colors.black,fontSize: 20),
               ),
               SizedBox(
                 height: _ksize.height * 0.01,
               ),
               Expanded(
-                
                 child: ListView.builder(
-                  padding: const EdgeInsets.all(0),
+                    padding: const EdgeInsets.all(0),
                     itemCount: items.length,
                     shrinkWrap: true,
                     scrollDirection: Axis.vertical,
@@ -142,3 +133,7 @@ class Lists {
   final String txt;
   final String tm;
 }
+
+SizedBox customsize = SizedBox(
+  height: 12,
+);

@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:secondpage/utils/app_colors.dart';
 
 class Buttonn extends StatelessWidget {
   const Buttonn(
       {super.key,
       required this.text,
       required this.color,
-      required this.textcolor});
+      required this.textcolor,this.ontap,});
 
   final String text;
   final Color color;
   final Color textcolor;
-
+  final VoidCallback? ontap;
   @override
   Widget build(BuildContext context) {
     final ksize = MediaQuery.of(context).size;
     return GestureDetector(
-      onTap: () {},
+      onTap: ontap,
       child: Container(
         height: ksize.height * 0.05,
         width: ksize.width * 0.30,
@@ -23,7 +24,7 @@ class Buttonn extends StatelessWidget {
           color: color,
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
-            color: const Color(0xff797979),
+            color: AppColors.Textfieldhint,
           ),
         ),
         child: Center(

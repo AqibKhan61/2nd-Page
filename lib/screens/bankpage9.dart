@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:secondpage/widgets/appbar.dart';
+import 'package:secondpage/utils/app_colors.dart';
+import 'package:secondpage/utils/apptextstyle.dart';
 import 'package:secondpage/widgets/profilrimage.dart';
 import 'package:secondpage/widgets/lastcontainer.dart';
 
@@ -7,22 +9,21 @@ class BankPage9 extends StatelessWidget {
   BankPage9({super.key});
 
   List itms = [
-    ContainerItems(Colors.blue, (Icons.water_drop),'Water'),
-    ContainerItems(Colors.yellow, (Icons.lightbulb),'Electricity'),
-    ContainerItems(Colors.green, (Icons.local_fire_department),'Gas'),
-    ContainerItems(Colors.pink, (Icons.shopping_bag),'Shopping'),
-    ContainerItems(
-        const Color.fromARGB(186, 12, 27, 114), (Icons.mobile_friendly),'Phone'),
-    ContainerItems(Colors.grey, (Icons.credit_card),'Credit Card'),
-    ContainerItems(Colors.red, (Icons.security),'Insurance'),
-    ContainerItems(Colors.blue, (Icons.home),'Mortague'),
-    ContainerItems(const Color.fromARGB(186, 12, 27, 114), (Icons.event_note),'Other Bills'),
+    ContainerItems(Colors.blue, (Icons.water_drop), 'Water'),
+    ContainerItems(Colors.yellow, (Icons.lightbulb), 'Electricity'),
+    ContainerItems(Colors.green, (Icons.local_fire_department), 'Gas'),
+    ContainerItems(Colors.pink, (Icons.shopping_bag), 'Shopping'),
+    ContainerItems(AppColors.primaryColor, (Icons.mobile_friendly), 'Phone'),
+    ContainerItems(Colors.grey, (Icons.credit_card), 'Credit Card'),
+    ContainerItems(Colors.red, (Icons.security), 'Insurance'),
+    ContainerItems(Colors.blue, (Icons.home), 'Mortague'),
+    ContainerItems(AppColors.primaryColor, (Icons.event_note), 'Other Bills'),
   ];
   @override
   Widget build(BuildContext context) {
     final ksize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBarr(title: 'Payment',ontap: (){}),
+      appBar: AppBarr(title: 'Payment', ontap: () {}),
       body: Column(
         children: [
           Container(
@@ -39,19 +40,16 @@ class BankPage9 extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: ksize.height * 0.08),
-                    child: const Column(
+                    child:  Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           'BALANCE',
-                          style: TextStyle(color: Colors.blue),
+                          style: AppTextStyle.textStyleMedium.copyWith(color: AppColors.linkColor),
                         ),
                         Text(
                           '\$4,180.20',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold),
+                          style: AppTextStyle.textStyletitle.copyWith(color: AppColors.white,fontSize: 28),
                         ),
                       ],
                     ),
@@ -84,12 +82,11 @@ class BankPage9 extends StatelessWidget {
             children: [
               const Spacer(),
               Padding(
-                padding: EdgeInsets.only(right: ksize.width * 0.09,top: ksize.height*0.03),
+                padding: EdgeInsets.only(
+                    right: ksize.width * 0.09, top: ksize.height * 0.03),
                 child: const Text(
                   'more>>',
-                  style: TextStyle(
-                    fontSize: 16,
-                      color: Colors.blue, decoration: TextDecoration.underline,decorationColor: Colors.blue),
+                  style: AppTextStyle.linkTextstyle,
                 ),
               )
             ],

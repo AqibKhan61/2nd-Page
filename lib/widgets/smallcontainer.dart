@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:secondpage/utils/apptextstyle.dart';
 
 
 class SmallContainer extends StatelessWidget{
@@ -15,7 +16,7 @@ class SmallContainer extends StatelessWidget{
         borderRadius: BorderRadius.circular(20),
         color:color,
       ),
-      child: Center(child: Text(text)),
+      child: Center(child: Text(text,style: AppTextStyle.textStyleMedium,)),
     );
   }
 }

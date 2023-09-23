@@ -1,10 +1,11 @@
 import '../widgets/boxes.dart';
 import 'package:flutter/material.dart';
 import 'package:secondpage/widgets/picture.dart';
+import 'package:secondpage/utils/app_colors.dart';
+import 'package:secondpage/utils/app_images.dart';
 import 'package:secondpage/screens/bankpage.dart';
 import 'package:secondpage/widgets/checkbox.dart';
-
-
+import 'package:secondpage/utils/apptextstyle.dart';
 
 
 // ignore: must_be_immutable
@@ -25,23 +26,23 @@ class HomePage extends StatelessWidget {
         body: Container(
       height: ksize.height,
       width: ksize.width,
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
-            'assets/images/mask_group_12.png',
+            AppImages.backgroungImage,
           ),
           fit: BoxFit.cover,
         ),
       ),
       child: Padding(
         padding: EdgeInsets.only(
-            top: ksize.height * 0.06,
-            left: ksize.width * 0.04,
-            ),
+          top: ksize.height * 0.06,
+          left: ksize.width * 0.04,
+        ),
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.only(right: ksize.width*0.04),
+              padding: EdgeInsets.only(right: ksize.width * 0.04),
               child: Row(
                 children: [
                   InkWell(
@@ -53,31 +54,18 @@ class HomePage extends StatelessWidget {
                     width: ksize.width * 0.04,
                   ),
                   InkWell(
-                    onTap: (){
-                      Navigator.of(context).push(MaterialPageRoute(builder: ((context) => BankPage())));
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: ((context) => BankPage())));
                     },
-                    child: const Text(
-                      'Select Media',
-                      style: TextStyle(
-                          color: Color(0xff212121),
-                          fontWeight: FontWeight.w500,
-                          fontFamily: "Outfit",
-                          fontStyle: FontStyle.normal,
-                          fontSize: 18.0),
-                    ),
+                    child: Text('Select Media',
+                        style: AppTextStyle.textStyleMedium.copyWith(fontSize: 18),),
                   ),
                   const Spacer(),
                   const CheckboxWidget(),
-                  const Text(
-                    'Select All',
-                    style: TextStyle(
-                      color: Color(0xff797979),
-                      fontWeight: FontWeight.w400,
-                      fontFamily: "Outfit",
-                      fontStyle: FontStyle.normal,
-                      fontSize: 18,
-                    ),
-                  ),
+                  const CheckboxWidget(),
+                  // Text('Select All',
+                  //     style: AppTextStyle.textStyleMedium.copyWith(color: AppColors.Textfieldhint)),
                 ],
               ),
             ),
@@ -90,7 +78,6 @@ class HomePage extends StatelessWidget {
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: items.length,
-
                   itemBuilder: (context, index) {
                     return Box(
                         text: items[index].text, image: items[index].img);
@@ -100,12 +87,13 @@ class HomePage extends StatelessWidget {
               height: ksize.height * 0.04,
             ),
             Padding(
-              padding: EdgeInsets.only(right: ksize.width*0.04),
+              padding: EdgeInsets.only(right: ksize.width * 0.04),
               child: Container(
                 height: ksize.height * 0.7,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                    color: Colors.white, borderRadius: BorderRadius.circular(15)),
+                    color: AppColors.white,
+                    borderRadius: BorderRadius.circular(15)),
                 child: GridView.builder(
                   padding: EdgeInsets.only(
                       left: ksize.width * 0.03,

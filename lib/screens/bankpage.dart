@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:secondpage/widgets/button.dart';
+import 'package:secondpage/utils/app_images.dart';
+import 'package:secondpage/utils/app_colors.dart';
 import 'package:secondpage/screens/bankpage2.dart';
 import 'package:secondpage/widgets/textfield.dart';
+import 'package:secondpage/utils/apptextstyle.dart';
 
 class BankPage extends StatelessWidget {
   @override
@@ -27,17 +30,14 @@ class BankPage extends StatelessWidget {
                 padding: EdgeInsets.only(top: ksize.height * 0.08),
                 child: Column(
                   children: [
-                    const Text(
+                     Text(
                       'WELCOME!',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 28,
-                      ),
+                      style: AppTextStyle.textStyletitle.copyWith(fontSize: 28,color: Colors.white)
                     ),
                     SizedBox(height: ksize.height*0.03,),
                     SizedBox(
                       height: ksize.height*0.30,
-                      child: Image.asset('assets/images/home.png',color: Colors.white,)),
+                      child: Image.asset(AppImages.homeimage,color: Colors.white,)),
                   ],
                 ),
               ),
@@ -47,35 +47,17 @@ class BankPage extends StatelessWidget {
             SizedBox(height: ksize.height*0.03,),
             const TextFieldd(lable: 'Password',obscure: true),
             SizedBox(height: ksize.height*0.03,),
-            const Buttonn(text: 'Login',color: Color.fromARGB(186, 12, 27, 114),textcolor: Colors.white),
+             Buttonn(text: 'Login',color: AppColors.primaryColor,textcolor: AppColors.white,ontap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const BankPage2()));
+            },),
             SizedBox(height: ksize.height*0.03,),
-            GestureDetector(
-              onTap: (){
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const BankPage2()));
-              },
-              child: const Text('Forgot Password?',style: TextStyle(
-                color: Colors.blue,
-                fontSize: 16,
-                decoration: TextDecoration.underline,
-                decorationColor: Colors.blue,
-                decorationStyle: TextDecorationStyle.solid,
-              ),),
-            ),
+            const Text('Forgot Password?',style: AppTextStyle.linkTextstyle,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('New To Bank Apps?', style: TextStyle(fontSize: 16,color: Color(0xff797979)),),
+                const Text('New To Bank Apps?', style: AppTextStyle.textStyleMedium),
                 SizedBox(width: ksize.height*0.01,),
-                GestureDetector(
-              onTap: (){},
-              child: const Text('Sign-Up',style: TextStyle(
-                color: Colors.blue,
-                fontSize: 16,
-                decoration: TextDecoration.underline,
-                decorationColor: Colors.blue,
-                decorationStyle: TextDecorationStyle.solid,
-              ),),
-            ),
+                const Text('Sign-Up',style: AppTextStyle.linkTextstyle),
               ],
             )
       

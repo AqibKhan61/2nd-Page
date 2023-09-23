@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:secondpage/utils/app_icon.dart';
 import 'package:secondpage/widgets/appbar.dart';
 import 'package:secondpage/widgets/button.dart';
+import 'package:secondpage/utils/app_colors.dart';
 import 'package:secondpage/screens/bankpage5.dart';
 import 'package:secondpage/widgets/textfield2.dart';
 import 'package:secondpage/widgets/profileimage2.dart';
@@ -11,7 +13,13 @@ class BankPage4 extends StatelessWidget {
   Widget build(BuildContext context) {
     final ksize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBarr(title: 'Account',ontap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context) =>const Bankpage5()));}),
+      appBar: AppBarr(
+        leading: Icon(
+          AppIcon.menu,
+          color: AppColors.white,
+          size: 25,
+        ),
+        title: 'Account',ontap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context) =>const Bankpage5()));}),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.only(top: ksize.height*0.03,left: ksize.width*0.15),
@@ -83,7 +91,9 @@ class BankPage4 extends StatelessWidget {
               SizedBox(height: ksize.height*0.02,),
               Padding(
                 padding: EdgeInsets.only(left: ksize.width*0.20),
-                child: const Buttonn(text: 'Save Changes',color: Color.fromARGB(186, 12, 27, 114),textcolor: Colors.white),
+                child:  Buttonn(text: 'Save Changes',color:AppColors.primaryColor,textcolor: AppColors.white,ontap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const Bankpage5()));
+                },),
               ),
             ],
           ),

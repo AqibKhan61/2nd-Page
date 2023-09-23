@@ -1,33 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:secondpage/utils/app_colors.dart';
+import 'package:secondpage/utils/apptextstyle.dart';
 
 class TextFieldd extends StatelessWidget {
-  const TextFieldd({super.key,required this.lable, required this.obscure});
   final String lable;
   final bool obscure;
+  final bool autofocus;
+  final dynamic validator;
+  final TextInputType? keyboardType;
+  final TextEditingController? controller;
+  const TextFieldd(
+      {super.key,
+      required this.lable,
+      this.obscure = false,
+      this.autofocus = false,
+      this.controller,
+      this.keyboardType,
+      this.validator});
+
   @override
   Widget build(BuildContext context) {
     final ksize = MediaQuery.of(context).size;
     return SizedBox(
-      width: ksize.width*0.72,
-      height: ksize.height*0.07,
+      width: ksize.width*0.8,
       child: TextFormField(
-        textDirection: TextDirection.ltr,
+        autofocus: autofocus,
+        controller: controller,
+        keyboardType: keyboardType,
+        validator: validator,
         obscureText: obscure,
         decoration: InputDecoration(
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(5),
-          ),
-          
-          hintText: 
-            lable,
-          hintStyle:const TextStyle(
-            color:Color(0xff797979),
-          ),
-          ),
-          textAlign: TextAlign.start,
-          focusNode: FocusNode(),
-          
-        ),
+          contentPadding: const EdgeInsets.only(top: 3,bottom:3,left: 8,right: 8),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(5),
+            ),
+            hintText: lable,
+            hintStyle: AppTextStyle.textStylesmall.copyWith(fontSize: 18)),
+        focusNode: FocusNode(),
+      ),
     );
   }
 }

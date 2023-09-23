@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:secondpage/utils/apptextstyle.dart';
 
 class TextField2 extends StatelessWidget {
   const TextField2({super.key, required this.text, required this.lable, required this.obscure});
@@ -11,10 +12,7 @@ class TextField2 extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(lable),
-        // SizedBox(
-        //   height: ksize.height * 0.01,
-        // ),
+        Text(lable,style: AppTextStyle.textStyleMedium,),
         SizedBox(
           height: ksize.height*0.05,
           width: ksize.width*0.68,
@@ -22,7 +20,7 @@ class TextField2 extends StatelessWidget {
             obscureText: obscure,
             decoration: InputDecoration(
               hintText: text,
-              hintStyle: const TextStyle(fontSize: 14),
+              hintStyle: AppTextStyle.textStylesmall.copyWith(fontSize: 15),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5),
               )

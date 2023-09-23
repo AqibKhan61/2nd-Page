@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:secondpage/widgets/button.dart';
+import 'package:secondpage/utils/app_images.dart';
+import 'package:secondpage/utils/app_colors.dart';
 import 'package:secondpage/widgets/checkbox.dart';
 import 'package:secondpage/screens/bankpage3.dart';
 import 'package:secondpage/widgets/textfield.dart';
+import 'package:secondpage/utils/apptextstyle.dart';
 
 class BankPage2 extends StatelessWidget {
   const BankPage2({super.key});
@@ -21,20 +24,20 @@ class BankPage2 extends StatelessWidget {
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
-                    Color.fromARGB(186, 12, 27, 114),
+                    AppColors.primaryColor,
                     Color.fromARGB(184, 43, 60, 156),
                   ])),
               child: Padding(
                   padding: EdgeInsets.only(top: ksize.height * 0.07),
                   child: Column(
                     children: [
-                      Image.asset('assets/images/images.png'),
+                      Image.asset(AppImages.homeimage2),
                       SizedBox(
                         height: ksize.height * 0.02,
                       ),
-                      const Text(
+                       Text(
                         'Connect to your bank Account',
-                        style: TextStyle(color: Colors.white),
+                        style: AppTextStyle.textStyleMedium.copyWith(color: Colors.white),
                       ),
                     ],
                   )),
@@ -66,13 +69,14 @@ class BankPage2 extends StatelessWidget {
                   children: [
                     const Text(
                       'Use 6 Characters with the mix of Letters,',
+                      style: AppTextStyle.textStyleMedium,
                     ),
                     const Text(
                       'numbers and symbols,',
+                      style: AppTextStyle.textStyleMedium,
                     ),
                     SizedBox(height: ksize.height*0.01,),
                     Row(
-                      //mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         const CheckboxWidget(),
                         SizedBox(
@@ -83,8 +87,12 @@ class BankPage2 extends StatelessWidget {
                           children: [
                             Text(
                               'By singing up you agree to Banks',
+                              style: AppTextStyle.textStyleMedium,
                             ),
-                            Text('term use And privacy policy'),
+                            Text('term use And privacy policy',
+                            style: AppTextStyle.textStyleMedium,
+                            ),
+
                           ],
                         )
                       ],
@@ -102,40 +110,33 @@ class BankPage2 extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Buttonn(
+                Buttonn(
+                  ontap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => BankPage3()));
+                  },
                     text: 'Sign Up',
-                    color: Color.fromARGB(186, 12, 27, 114),
-                    textcolor: Colors.white),
+                    color: AppColors.primaryColor,
+                    textcolor:AppColors.white),
                 SizedBox(width: ksize.width * 0.03),
                 const Text('or'),
                 SizedBox(width: ksize.width * 0.03),
                 const Buttonn(
                   text: 'Cancel',
-                  color: Colors.white,
-                  textcolor: Colors.black,
+                  color: AppColors.white,
+                  textcolor: AppColors.black,
                 )
               ],
             ),
             SizedBox(
               height: ksize.height * 0.01,
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('Already Signed Up?'),
-                InkWell(
-                  onTap: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => BankPage3()));
-                  },
-                  child: const Text(
-                    'Login',
-                    style: TextStyle(
-                      color: Colors.blue,
-                      decoration: TextDecoration.underline,
-                      decorationColor: Colors.blue,
-                    ),
-                  ),
+                 Text('Already Signed Up?'),
+                 Text(
+                  'Login',
+                  style: AppTextStyle.linkTextstyle,
                 )
               ],
             )
